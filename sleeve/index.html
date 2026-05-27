@@ -2,15 +2,119 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name:contentReference[oaicite:0]{index=0}idth=device-width, initial-scale=1.0">
   <title>소매 계산기</title>
   <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
-  <main class="container">
-    <a href="../">← 돌아가기</a>
-    <h1>소매 계산기</h1>
-    <p>준비 중</p>
+  <main class="container tool-page">
+    <a class="back-link" href="../">← 돌아가기</a>
+
+    <header class="tool-header">
+      <h1>소매 계산기</h1>
+      <p>소매 줄임 구간과 줄임 간격을 계산합니다.</p>
+    </header>
+
+    <form id="sleeveForm" class="calculator-form">
+      <section class="form-section">
+        <h2>게이지</h2>
+
+        <label class="input-label" for="postWashRows">
+          세탁 후 10cm당 단수
+        </label>
+        <div class="input-with-unit">
+          <input type="number" id="postWashRows" inputmode="decimal" step="0.1" min="0" placeholder="29" required>
+          <span>단</span>
+        </div>
+
+        <label class="input-label optional-label" for="preWashRows">
+          세탁 전 10cm당 단수
+          <small>선택 입력</small>
+        </label>
+        <div class="input-with-unit">
+          <input type="number" id="preWashRows" inputmode="decimal" step="0.1" min="0" placeholder="입력 시 작업 중 실측 길이 계산">
+          <span>단</span>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2>길이</h2>
+
+        <label class="input-label" for="targetLength">
+          어깨점부터 목표 소매 길이
+        </label>
+        <div class="input-with-unit">
+          <input type="number" id="targetLength" inputmode="decimal" step="0.1" min="0" placeholder="70" required>
+          <span>cm</span>
+        </div>
+
+        <label class="input-label" for="ribLength">
+          고무단 길이
+        </label>
+        <div class="input-with-unit">
+          <input type="number" id="ribLength" inputmode="decimal" step="0.1" min="0" placeholder="5" required>
+          <span>cm</span>
+        </div>
+
+        <label class="checkbox-row" for="hasNoDecreaseSection">
+          <input type="checkbox" id="hasNoDecreaseSection">
+          <span>줄임을 하지 않는 구간 있음</span>
+        </label>
+
+        <div id="noDecreaseLengthWrap" class="hidden-field">
+          <label class="input-label" for="noDecreaseLength">
+            배색 / 무수축 구간 길이
+          </label>
+          <div class="input-with-unit">
+            <input type="number" id="noDecreaseLength" inputmode="decimal" step="0.1" min="0" placeholder="35">
+            <span>cm</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2>콧수</h2>
+
+        <label class="input-label" for="startStitches">
+          시작 콧수
+        </label>
+        <div class="input-with-unit">
+          <input type="number" id="startStitches" inputmode="numeric" step="1" min="1" placeholder="80" required>
+          <span>코</span>
+        </div>
+
+        <label class="input-label" for="endStitches">
+          목표 콧수
+        </label>
+        <div class="input-with-unit">
+          <input type="number" id="endStitches" inputmode="numeric" step="1" min="1" placeholder="50" required>
+          <span>코</span>
+        </div>
+
+        <label class="input-label" for="decreaseStitches">
+          한 번에 줄이는 콧수
+        </label>
+        <div class="input-with-unit">
+          <input type="number" id="decreaseStitches" inputmode="numeric" step="1" min="1" value="2" required>
+          <span>코</span>
+        </div>
+      </section>
+
+      <button class="calculate-button" type="submit">계산하기</button>
+    </form>
+
+    <section id="resultSection" class="result-section" hidden>
+      <div class="result-header">
+        <h2>계산 결과</h2>
+        <button id="copyButton" class="copy-button" type="button">노션용 복사</button>
+      </div>
+
+      <pre id="resultText" class="result-text"></pre>
+      <p id="copyStatus" class="copy-status" aria-live="polite"></p>
+    </section>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
