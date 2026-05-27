@@ -23,8 +23,9 @@ body {
 
 .container {
   width: min(100%, 430px);
+  min-height: 100dvh;
   margin: 0 auto;
-  padding: 56px 22px 36px;
+  padding: max(56px, env(safe-area-inset-top)) 22px max(36px, env(safe-area-inset-bottom));
 }
 
 .header {
