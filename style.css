@@ -179,6 +179,63 @@ body {
   }
 }
 
+/* 프로젝트 실 계산기 메인 아이콘 */
+
+.project-yarn-icon .project-yarn-ball {
+  position: absolute;
+  width: 43px;
+  height: 34px;
+  top: 25px;
+  left: 19px;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+}
+
+.project-yarn-icon .project-yarn-ball::before,
+.project-yarn-icon .project-yarn-ball::after {
+  content: "";
+  position: absolute;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+}
+
+.project-yarn-icon .project-yarn-ball::before {
+  width: 22px;
+  height: 29px;
+  top: -1px;
+  left: 7px;
+  transform: rotate(36deg);
+}
+
+.project-yarn-icon .project-yarn-ball::after {
+  width: 28px;
+  height: 16px;
+  top: 7px;
+  left: 4px;
+  transform: rotate(-18deg);
+}
+
+.project-yarn-line {
+  position: absolute;
+  display: block;
+  height: 2px;
+  background-color: var(--accent);
+  border-radius: 99px;
+}
+
+.project-yarn-line.line-a {
+  width: 21px;
+  top: 58px;
+  left: 48px;
+  transform: rotate(13deg);
+}
+
+.project-yarn-line.line-b {
+  width: 12px;
+  top: 62px;
+  left: 67px;
+}
+
 
 
 /* 개별 계산기 페이지 */
@@ -487,3 +544,67 @@ body {
 
 
 
+
+
+/* 프로젝트 실 계산기 */
+
+.project-yarn-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.project-yarn-row {
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-yarn-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.project-yarn-row-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.project-yarn-row-title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.project-text-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: var(--text);
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.project-text-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.project-input-with-long-unit span {
+  width: 63px;
+  font-size: 13px;
+}
+
+.project-remove-button {
+  height: 40px;
+  padding: 0 14px;
+}
+
+.project-remove-button.is-hidden {
+  visibility: hidden;
+}
