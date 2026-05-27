@@ -106,7 +106,7 @@ copyButton.addEventListener("click", async () => {
 
   try {
     await navigator.clipboard.writeText(text);
-    copyStatus.textContent = "복사되었습니다. 노션에 붙여넣으면 됩니다.";
+    copyStatus.textContent = "복사되었습니다.";
   } catch (error) {
     fallbackCopy(text);
   }
