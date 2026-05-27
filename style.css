@@ -396,3 +396,91 @@ body {
   font-size: 13px;
   letter-spacing: -0.03em;
 }
+
+
+
+/* 합사 계산기 */
+
+.section-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.section-heading-row h2 {
+  margin: 0;
+}
+
+.small-action-button {
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background-color: var(--icon-background);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.small-action-button:active {
+  transform: scale(0.98);
+}
+
+.yarn-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.yarn-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.yarn-number {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.yarn-input-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.yarn-input {
+  flex: 1;
+}
+
+.yarn-input span {
+  width: 63px;
+  font-size: 13px;
+}
+
+.remove-yarn-button {
+  flex-shrink: 0;
+  height: 48px;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.remove-yarn-button:active {
+  transform: scale(0.98);
+}
+
+.remove-yarn-button.is-hidden {
+  visibility: hidden;
+}
