@@ -406,7 +406,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
 
 .section-heading-row h2 {
@@ -432,7 +432,7 @@ body {
 .yarn-list {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 30px;
 }
 
 .yarn-row {
