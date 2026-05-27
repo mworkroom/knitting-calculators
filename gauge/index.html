@@ -3,14 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="뜨개 계산기">
   <title>게이지 계산기</title>
   <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
-  <main class="container">
-    <a href="../">← 돌아가기</a>
-    <h1>게이지 계산기</h1>
-    <p>준비 중</p>
+  <main class="container tool-page">
+    <a class="back-link" href="../">← 돌아가기</a>
+
+    <header class="tool-header">
+      <h1>게이지 계산기</h1>
+      <p>내 게이지로 원하는 완성 치수에 필요한 코와 단을 계산합니다.</p>
+    </header>
+
+    <form id="gaugeForm" class="calculator-form">
+      <section class="form-section">
+        <h2>내 게이지</h2>
+
+        <label class="input-label" for="stitchGauge">
+          10cm당 콧수
+        </label>
+        <div class="input-with-unit">
+          <input
+            type="number"
+            id="stitchGauge"
+            inputmode="decimal"
+            step="0.1"
+            min="0"
+            placeholder="18"
+            required
+          >
+          <span>코</span>
+        </div>
+
+        <label class="input-label" for="rowGauge">
+          10cm당 단수
+        </label>
+        <div class="input-with-unit">
+          <input
+            type="number"
+            id="rowGauge"
+            inputmode="decimal"
+            step="0.1"
+            min="0"
+            placeholder="29"
+            required
+          >
+          <span>단</span>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <h2>원하는 완성 치수</h2>
+
+        <label class="input-label" for="targetBust">
+          가슴둘레
+        </label>
+        <div class="input-with-unit">
+          <input
+            type="number"
+            id="targetBust"
+            inputmode="decimal"
+            step="0.1"
+            min="0"
+            value="115"
+            required
+          >
+          <span>cm</span>
+        </div>
+
+        <label class="input-label optional-label" for="targetLength">
+          길이
+          <small>선택 입력</small>
+        </label>
+        <div class="input-with-unit">
+          <input
+            type="number"
+            id="targetLength"
+            inputmode="decimal"
+            step="0.1"
+            min="0"
+            placeholder="필요한 경우만 입력"
+          >
+          <span>cm</span>
+        </div>
+      </section>
+
+      <button class="calculate-button" type="submit">계산하기</button>
+    </form>
+
+    <section id="resultSection" class="result-section" hidden>
+      <div class="result-header">
+        <h2>계산 결과</h2>
+        <button id="copyButton" class="copy-button" type="button">COPY</button>
+      </div>
+
+      <pre id="resultText" class="result-text"></pre>
+      <p id="copyStatus" class="copy-status" aria-live="polite"></p>
+    </section>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
