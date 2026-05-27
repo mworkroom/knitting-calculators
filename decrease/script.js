@@ -246,6 +246,6 @@ function fallbackCopy(text) {
   document.body.removeChild(temporaryTextArea);
 
   copyStatus.textContent = copied
-    ? "복사되었습니다. 노션에 붙여넣으면 됩니다."
+    ? "복사되었습니다."
     : "복사에 실패했습니다. 결과 텍스트를 직접 선택해 복사하세요.";
 }
