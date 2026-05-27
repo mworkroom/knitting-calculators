@@ -3,14 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="뜨개 계산기">
   <title>합사 계산기</title>
   <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
-  <main class="container">
-    <a href="../">← 돌아가기</a>
-    <h1>합사 계산기</h1>
-    <p>준비 중</p>
+  <main class="container tool-page">
+    <a class="back-link" href="../">← 돌아가기</a>
+
+    <header class="tool-header">
+      <h1>합사 계산기</h1>
+      <p>여러 가닥을 합사했을 때의 최종 굵기를 계산합니다.</p>
+    </header>
+
+    <form id="plyForm" class="calculator-form">
+      <section class="form-section">
+        <div class="section-heading-row">
+          <h2>실 정보</h2>
+          <button id="addYarnButton" class="small-action-button" type="button">
+            + 실 추가
+          </button>
+        </div>
+
+        <div id="yarnList" class="yarn-list"></div>
+      </section>
+
+      <button class="calculate-button" type="submit">계산하기</button>
+    </form>
+
+    <section id="resultSection" class="result-section" hidden>
+      <div class="result-header">
+        <h2>계산 결과</h2>
+        <button id="copyButton" class="copy-button" type="button">노션용 복사</button>
+      </div>
+
+      <pre id="resultText" class="result-text"></pre>
+      <p id="copyStatus" class="copy-status" aria-live="polite"></p>
+    </section>
   </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
