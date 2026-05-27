@@ -5,9 +5,6 @@ const resultText = document.getElementById("resultText");
 const copyButton = document.getElementById("copyButton");
 const copyStatus = document.getElementById("copyStatus");
 
-const actualStitchesInput = document.getElementById("actualStitches");
-const checkButton = document.getElementById("checkButton");
-const checkResult = document.getElementById("checkResult");
 
 let latestCalculation = null;
 
@@ -15,8 +12,6 @@ stitchForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   copyStatus.textContent = "";
-  checkResult.textContent = "";
-  actualStitchesInput.value = "";
 
   const startStitches = getNumber("startStitches");
   const endStitches = getNumber("endStitches");
@@ -58,49 +53,6 @@ copyButton.addEventListener("click", async () => {
   }
 });
 
-checkButton.addEventListener("click", () => {
-  if (!latestCalculation) {
-    return;
-  }
-
-  const actualStitches = Number(actualStitchesInput.value);
-
-  if (!Number.isInteger(actualStitches) || actualStitches <= 0) {
-    checkResult.textContent = "작업 후 콧수를 입력하세요.";
-    return;
-  }
-
-  const target = latestCalculation.endStitches;
-  const difference = actualStitches - target;
-
-  if (difference === 0) {
-    checkResult.textContent = "목표 콧수와 일치합니다.";
-    checkResult.className = "check-result is-correct";
-    return;
-  }
-
-  if (latestCalculation.type === "decrease") {
-    if (difference > 0) {
-      checkResult.textContent =
-        `목표보다 ${difference}코 많습니다. 줄임 ${difference}회를 빠뜨렸습니다.`;
-    } else {
-      checkResult.textContent =
-        `목표보다 ${Math.abs(difference)}코 적습니다. 줄임을 ${Math.abs(difference)}회 더 했습니다.`;
-    }
-  }
-
-  if (latestCalculation.type === "increase") {
-    if (difference < 0) {
-      checkResult.textContent =
-        `목표보다 ${Math.abs(difference)}코 적습니다. 늘림 ${Math.abs(difference)}회를 빠뜨렸습니다.`;
-    } else {
-      checkResult.textContent =
-        `목표보다 ${difference}코 많습니다. 늘림을 ${difference}회 더 했습니다.`;
-    }
-  }
-
-  checkResult.className = "check-result is-error";
-});
 
 function calculateDecrease(startStitches, endStitches) {
   const decreaseCount = startStitches - endStitches;
@@ -214,7 +166,7 @@ function buildInstruction(intervals, operation) {
 
   compressedSteps.push(formatRepeat(currentStep, repeatCount));
 
-  return compressedSteps.join(", ");
+  return compressedSteps.join("\n");
 }
 
 function formatRepeat(step, count) {
