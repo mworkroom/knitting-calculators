@@ -1,11 +1,11 @@
 :root {
-  --background: #f7f4ef;
-  --card: #fffdf9;
-  --text: #38332f;
-  --line: #ddd5cb;
-  --accent: #756a60;
-  --icon-background: #eee6dd;
-  --shadow: rgba(62, 48, 37, 0.06);
+  --background: #f3f4f5;
+  --card: #ffffff;
+  --text: #33363b;
+  --line: #d8dbe0;
+  --accent: #727780;
+  --icon-background: #e8eaed;
+  --shadow: rgba(35, 40, 47, 0.06);
 }
 
 * {
