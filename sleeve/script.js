@@ -73,7 +73,7 @@ sleeveForm.addEventListener("submit", (event) => {
   const preciseDistribution = createPreciseDistribution(decreaseRows, decreaseCount);
 
   let output =
-`줄임을 진행할 길이: ${formatNumber(decreaseLength)}cm
+`줄여야 하는 길이: ${formatNumber(decreaseLength)}cm
 줄임을 진행할 단수: ${decreaseRows}단
 
 줄일 콧수: ${stitchesToDecrease}코
@@ -90,7 +90,7 @@ ${preciseDistribution}`;
 
     output += `
 
-세탁 전 작업 시 측정 길이:
+세탁 전 측정 길이:
 ${formatNumber(preWashMeasuredLength)}cm 뜨기`;
   }
 
