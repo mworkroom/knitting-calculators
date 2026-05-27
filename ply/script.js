@@ -87,7 +87,6 @@ function createYarnRow() {
           inputmode="decimal"
           step="0.1"
           min="0"
-          placeholder="400"
           required
         >
         <span>m / 100g</span>
