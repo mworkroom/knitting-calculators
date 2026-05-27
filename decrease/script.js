@@ -82,7 +82,6 @@ function calculateDecrease(startStitches, endStitches) {
 
 총 ${decreaseCount}코를 줄여야 합니다.
 k2tog ${decreaseCount}회 = ${decreaseCount}코 감소
-작업 후 남아야 하는 콧수: ${endStitches}코
 
 
 ${instruction}`;
