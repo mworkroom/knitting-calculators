@@ -116,7 +116,7 @@ function createYarnRow() {
       type="text"
       id="project-yarn-name-${yarnCount}"
       class="project-text-input project-yarn-name"
-      placeholder="뉴브리즈"
+      placeholder="실 이름"
     >
 
     <label class="input-label" for="project-yarn-length-${yarnCount}">
@@ -129,8 +129,7 @@ function createYarnRow() {
         class="project-yarn-length"
         inputmode="decimal"
         step="0.1"
-        min="0"
-        placeholder="800"
+        min="0" 
         required
       >
       <span>m / 100g</span>
