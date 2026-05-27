@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="뜨개 계산기">
+  <title>프로젝트 실 계산기</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <main class="container tool-page">
+    <a class="back-link" href="../">← 돌아가기</a>
+
+    <header class="tool-header">
+      <h1>프로젝트 실 계산기</h1>
+      <p>목표 길이에 필요한 실의 양과 잔여·부족량을 계산합니다.</p>
+    </header>
+
+    <form id="projectYarnForm" class="calculator-form">
+      <section class="form-section">
+        <h2>프로젝트</h2>
+
+        <label class="input-label" for="targetLength">
+          목표 사용 길이
+        </label>
+        <div class="input-with-unit">
+          <input
+            type="number"
+            id="targetLength"
+            inputmode="decimal"
+            step="0.1"
+            min="0"
+            placeholder="1000"
+            required
+          >
+          <span>m</span>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="section-heading-row">
+          <h2>사용할 실</h2>
+          <button id="addYarnButton" class="small-action-button" type="button">
+            + 실 추가
+          </button>
+        </div>
+
+        <div id="projectYarnList" class="project-yarn-list"></div>
+      </section>
+
+      <button class="calculate-button" type="submit">계산하기</button>
+    </form>
+
+    <section id="resultSection" class="result-section" hidden>
+      <div class="result-header">
+        <h2>계산 결과</h2>
+        <button id="copyButton" class="copy-button" type="button">COPY</button>
+      </div>
+
+      <pre id="resultText" class="result-text"></pre>
+      <p id="copyStatus" class="copy-status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
