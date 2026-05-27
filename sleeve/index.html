@@ -27,7 +27,7 @@
           <small>선택 입력</small>
         </label>
         <div class="input-with-unit">
-          <input type="number" id="preWashRows" inputmode="decimal" step="0.1" min="0" placeholder="입력 시 작업 중 실측 길이 계산">
+          <input type="number" id="preWashRows" inputmode="decimal" step="0.1" min="0" required>
           <span>단</span>
         </div>
 
@@ -49,7 +49,7 @@
           어깨점부터 목표 소매 길이
         </label>
         <div class="input-with-unit">
-          <input type="number" id="targetLength" inputmode="decimal" step="0.1" min="0" placeholder="70" required>
+          <input type="number" id="targetLength" inputmode="decimal" step="0.1" min="0" value="70" required>
           <span>cm</span>
         </div>
 
@@ -57,7 +57,7 @@
           고무단 길이
         </label>
         <div class="input-with-unit">
-          <input type="number" id="ribLength" inputmode="decimal" step="0.1" min="0" placeholder="5" required>
+          <input type="number" id="ribLength" inputmode="decimal" step="0.1" min="0" value="5" required>
           <span>cm</span>
         </div>
 
@@ -111,7 +111,7 @@
     <section id="resultSection" class="result-section" hidden>
       <div class="result-header">
         <h2>계산 결과</h2>
-        <button id="copyButton" class="copy-button" type="button">노션용 복사</button>
+        <button id="copyButton" class="copy-button" type="button">COPY</button>
       </div>
 
       <pre id="resultText" class="result-text"></pre>
