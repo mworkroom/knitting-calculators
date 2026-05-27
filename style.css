@@ -1,0 +1,179 @@
+:root {
+  --background: #f7f4ef;
+  --card: #fffdf9;
+  --text: #38332f;
+  --line: #ddd5cb;
+  --accent: #756a60;
+  --icon-background: #eee6dd;
+  --shadow: rgba(62, 48, 37, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Pretendard", "Noto Sans KR", sans-serif;
+}
+
+.container {
+  width: min(100%, 430px);
+  margin: 0 auto;
+  padding: 56px 22px 36px;
+}
+
+.header {
+  margin-bottom: 34px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.calculator-card {
+  min-height: 182px;
+  padding: 23px 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background-color: var(--card);
+  box-shadow: 0 3px 12px var(--shadow);
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.calculator-card:active {
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+.icon {
+  width: 82px;
+  height: 82px;
+  margin-top: 6px;
+  border-radius: 21px;
+  background-color: var(--icon-background);
+  position: relative;
+}
+
+.calculator-name {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+/* 게이지 계산기 아이콘 */
+.gauge-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 17px;
+}
+
+.stitch-line {
+  display: block;
+  height: 3px;
+  border-radius: 99px;
+  background-color: var(--accent);
+}
+
+/* 합사 계산기 아이콘 */
+.ply-icon .yarn {
+  position: absolute;
+  display: block;
+  width: 3px;
+  height: 55px;
+  background-color: var(--accent);
+  border-radius: 99px;
+  top: 13px;
+}
+
+.yarn-1 {
+  left: 30px;
+  transform: rotate(-16deg);
+}
+
+.yarn-2 {
+  left: 40px;
+}
+
+.yarn-3 {
+  left: 50px;
+  transform: rotate(16deg);
+}
+
+/* 소매 계산기 아이콘 */
+.sleeve-body {
+  position: absolute;
+  width: 30px;
+  height: 59px;
+  top: 12px;
+  left: 26px;
+  border: 3px solid var(--accent);
+  border-radius: 8px 8px 13px 13px;
+  transform: rotate(-16deg);
+}
+
+.sleeve-body::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 2px;
+  right: 2px;
+  border-top: 2px solid var(--accent);
+}
+
+/* 코줄임 계산기 아이콘 */
+.decrease-icon .decrease-row {
+  display: block;
+  position: absolute;
+  height: 3px;
+  background-color: var(--accent);
+  border-radius: 99px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.row-1 {
+  width: 48px;
+  top: 25px;
+}
+
+.row-2 {
+  width: 36px;
+  top: 39px;
+}
+
+.row-3 {
+  width: 24px;
+  top: 53px;
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 42px 16px 24px;
+  }
+
+  .calculator-card {
+    min-height: 165px;
+  }
+}
