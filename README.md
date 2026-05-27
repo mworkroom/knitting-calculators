@@ -1,2 +1,2 @@
-# sleeve-calculator
-Sleeve decrease calculator for knitting
+# knitting-calculators
+calculators for knitting
