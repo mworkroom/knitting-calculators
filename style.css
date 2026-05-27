@@ -177,3 +177,221 @@ body {
     min-height: 165px;
   }
 }
+
+
+
+/* 개별 계산기 페이지 */
+
+.tool-page {
+  padding-top: 34px;
+  padding-bottom: 48px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.tool-header {
+  margin-bottom: 30px;
+}
+
+.tool-header h1 {
+  margin: 0 0 9px;
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.tool-header p {
+  margin: 0;
+  color: var(--accent);
+  font-size: 14px;
+  letter-spacing: -0.03em;
+}
+
+.calculator-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-section {
+  padding: 22px 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background-color: var(--card);
+}
+
+.form-section h2 {
+  margin: 0 0 19px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.input-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 17px 0 8px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.form-section h2 + .input-label {
+  margin-top: 0;
+}
+
+.optional-label small {
+  padding: 3px 6px;
+  border-radius: 7px;
+  background-color: var(--icon-background);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.input-with-unit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-with-unit input {
+  width: 100%;
+  height: 48px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: var(--text);
+  font-size: 17px;
+  font-family: inherit;
+}
+
+.input-with-unit input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.input-with-unit span {
+  flex-shrink: 0;
+  width: 29px;
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 22px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.checkbox-row input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+
+.hidden-field {
+  display: none;
+  margin-top: 18px;
+}
+
+.hidden-field.is-visible {
+  display: block;
+}
+
+.hidden-field .input-label {
+  margin-top: 0;
+}
+
+.calculate-button {
+  height: 55px;
+  border: 0;
+  border-radius: 16px;
+  background-color: var(--text);
+  color: #fffdf9;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: inherit;
+  letter-spacing: -0.04em;
+  cursor: pointer;
+}
+
+.calculate-button:active {
+  transform: scale(0.99);
+}
+
+.result-section {
+  margin-top: 25px;
+  padding: 22px 18px 19px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background-color: var(--card);
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.result-header h2 {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.04em;
+}
+
+.copy-button {
+  flex-shrink: 0;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background-color: var(--icon-background);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.copy-button:active {
+  transform: scale(0.98);
+}
+
+.result-text {
+  margin: 0;
+  padding: 17px 15px;
+  border-radius: 14px;
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.7;
+  font-family: inherit;
+  letter-spacing: -0.03em;
+  white-space: pre-wrap;
+  word-break: keep-all;
+}
+
+.copy-status {
+  min-height: 20px;
+  margin: 12px 0 0;
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: -0.03em;
+}
